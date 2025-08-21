@@ -1,0 +1,297 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.search-section {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+.date-input-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.date-input-group label {
+    font-weight: 600;
+    color: #555;
+}
+
+.date-input-group input {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.date-input-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.date-input-group button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.date-input-group button:hover {
+    transform: translateY(-2px);
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.meal-info {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    padding: 30px;
+}
+
+.meal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.meal-header h2 {
+    color: #333;
+    font-size: 1.8rem;
+}
+
+.nutrition-summary {
+    display: flex;
+    gap: 20px;
+}
+
+.calorie-display {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.calorie-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.calorie-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.nutrition-chart {
+    margin-bottom: 30px;
+}
+
+.nutrition-chart h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.chart-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nutrition-details {
+    flex: 1;
+    min-width: 200px;
+}
+
+.nutrition-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.nutrition-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.nutrition-color.carb {
+    background-color: #4ecdc4;
+}
+
+.nutrition-color.protein {
+    background-color: #ffe66d;
+}
+
+.nutrition-color.fat {
+    background-color: #ff6b6b;
+}
+
+.meal-menu h3,
+.favorites-section h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.meal-menu ul,
+.favorites-section ul {
+    list-style: none;
+}
+
+.meal-menu li {
+    background: #f8f9fa;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.meal-menu li:hover {
+    background: #e9ecef;
+}
+
+.menu-item {
+    flex: 1;
+}
+
+.heart-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ddd;
+    transition: color 0.3s ease;
+}
+
+.heart-btn.active {
+    color: #e74c3c;
+}
+
+.heart-btn:hover {
+    color: #e74c3c;
+}
+
+.favorites-section li {
+    background: #ffe6e6;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-favorite {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.error-message {
+    background: #ffebee;
+    border: 1px solid #ffcdd2;
+    color: #c62828;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .date-input-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .meal-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    
+    .chart-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
